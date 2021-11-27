@@ -30,6 +30,14 @@ db.sequelize.sync().then(() => {
 });
 
 db.users = require("./users")(sequelize, DataTypes);
+db.category = require("./tbl_category")(sequelize, DataTypes);
+db.subCategory = require("./tbl_subcategory")(sequelize, DataTypes);
+
+//relations defindes
+// db.category.hasMany(db.subCategory,{foreignKey: "categorySlug"});
+// db.subCategory.belongsTo(db.category,{foreignKey: "categorySlug"})
+
+
 
 //relations of buyer with all forms
 // db.users.hasMany(db.feedbacks,);

@@ -21,6 +21,7 @@ app.use(cookieParser());
 
 //routes
 app.use("/api/user", require("./routes/auth"));
+app.use("/api/product", require("./routes/product"));
 
 
 app.listen(process.env.PORT, () => {
