@@ -1,23 +1,25 @@
 const { nanoid } = require("nanoid");
 const AWS = require("aws-sdk");
 
+const env = require("dotenv");
+env.config();
+
 const awsConfig = {
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-//   region: process.env.AWS_REGION,
-//   apiVersion: process.env.AWS_API_VERSION,
+  accessKeyId: "AKIAQMNOG7WXCVCLMONB",
+  secretAccessKey: "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",
+  region: "ap-south-1",
 };
 
 const SES = new AWS.SES(awsConfig);
 
 const sendmail = async () => {
-  const email = "pallishreeb@thecloudriders.com";
+  const email = "pallishreebehera01@gmail.com";
   const shortCode = nanoid(6).toUpperCase();
-  
+
   try {
-      // prepare for email
+    // prepare for email
     const params = {
-    Source: process.env.EMAIL_FROM,
+      Source: "pallishreebehera01@gmail.com",
       Destination: {
         ToAddresses: [email],
       },
@@ -30,7 +32,7 @@ const sendmail = async () => {
                     <h1>Reset password</h1>
                     <p>Use this code to reset your password</p>
                     <h2 style="color:red;">${shortCode}</h2>
-                    <i>edemy.com</i>
+                    <i>cloudhub.com</i>
                   </html>
                 `,
           },
@@ -57,4 +59,6 @@ const sendmail = async () => {
 };
 
 // module.exports = sendmail;
-sendmail()
+sendmail();
+
+// AccessDenied: User `arn:aws:iam::454522539655:user/homedrect-s3' is not authorized to perform `ses:SendEmail' on resource `arn:aws:ses:ap-south-1:454522539655:identity/admin@thecloudriders.com'
