@@ -114,7 +114,7 @@ const login = async (req, res) => {
       // secure: true, // only works on https
     });
     // send user as json response
-    res.status(200).json({success: true,user,message:
+    res.status(200).json({success: true,user,token,message:
       "Logged in succesfully",});
   } catch (err) {
     console.log(err);

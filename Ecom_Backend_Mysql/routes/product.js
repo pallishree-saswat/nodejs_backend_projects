@@ -2,14 +2,21 @@ const express = require("express");
 const router = express.Router();
 
 const {
-  getSubCategories,
-  getCategories,
-  getSubCategoriesByCategory,
-  CategoryById
+  getAllProducts,
+  getSingleProduct,
+  productByCategory,
+  getProductsForSubCategory,
+  relatedProducts,
+  searchProduct,
+  totalProducts,
 } = require("../controllers/product");
 
-router.get("/categories", getCategories); 
-router.get("/categories/:categoryId", CategoryById); 
-router.get("/subcategories/:categoryId", getSubCategoriesByCategory);
-router.get("/subcategories", getSubCategories);
+router.get("/products", getAllProducts);
+router.get("/products/:productID", getSingleProduct);
+router.get("/products/:categoryID", productByCategory);
+router.get("/products/:subCatId", getProductsForSubCategory);
+router.get("/products/:productID", relatedProducts);
+router.get("/products/search", searchProduct);
+router.get("/products/totalCount", totalProducts);
+
 module.exports = router;
