@@ -20,3 +20,10 @@
 [0mPOST /api/user/verifyEmail [32m200[0m 51.425 ms - 93[0m
 [0mPOST /api/user/login [32m200[0m 186.445 ms - 450[0m
 [0mGET /api/product/products/ [32m200[0m 95.021 ms - 1884[0m
+[0mGET /api/product/categories [33m404[0m 14.572 ms - 37[0m
+[0mGET /api/category/categories [32m200[0m 441.018 ms - 412[0m
+[0mGET /api/category/categories [36m304[0m 11.748 ms - -[0m
+[0mGET /api/category/categories [36m304[0m 45.964 ms - -[0m
+[0mGET /api/category/categories [36m304[0m 62.091 ms - -[0m
+[0mGET /api/category/categories [36m304[0m 8.101 ms - -[0m
+[0mGET /api/category/categories [36m304[0m 58.788 ms - -[0m
