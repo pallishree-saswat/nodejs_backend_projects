@@ -44,7 +44,7 @@ module.exports = {
         isEmailVerified: false,
       });
       await newUser.save();
-      //   await sendGrid.sendMail(emailReq);
+      // await sendGrid.sendMail(emailReq);
       await sendGrid(email, body);
       //SEND MAIL TO USER FOR EMAIL VERIFICATION
       res.status(200).json({
