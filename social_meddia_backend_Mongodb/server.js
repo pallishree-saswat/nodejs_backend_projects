@@ -53,7 +53,7 @@ app.use((error, req, res, next) => {
 const PORT = process.env.PORT || 4000;
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/vichayan", {
+  .connect("mongodb://127.0.0.1:27017/vichayannewww", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
